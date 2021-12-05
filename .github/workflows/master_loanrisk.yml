@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'LoanRisk'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BC9D4087D84E4E09A788515269736E99 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7F0BA2F51CB4980964A794A7FB92E36 }}
