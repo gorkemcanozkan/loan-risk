@@ -1,0 +1,280 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Risk Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">LOAN RISK PREDICTION</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+    <h3>{{ prediction_text }}</h3>
+
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Income</h5>
+                            <!-- Income -->
+                            <input type="text" name="Income" id="Income" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Age</h5>
+                            <!-- Age -->
+                            <input type="text" name="Age" id="Age" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Experience Years</h5>
+                            <!-- Experience -->
+                            <input type="text" name="Experience" id="Experience" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Married/Single</h5>
+                            <!-- Married/Single -->
+                            <select name="Married/Single" id="Married/Single" required="required">
+                                <option value="0">Choose</option>
+                                <option value="1">Single</option>
+                                <option value="0">Married</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">House Ownership</h5>
+                            <!-- House_Ownership -->
+                            <select name="House_Ownership" id="House_Ownership" required="required">
+                                <option value="0">Choose</option>
+                                <option value="1">Rent</option>
+                                <option value="0">No Rent & No Own</option>
+                                <option value="0.5">Own</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Car Ownership</h5>
+                            <!-- Car_Ownership -->
+                            <select name="Car_Ownership" id="Car_Ownership" required="required">
+                                <option value="0">Choose</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Profession</h5>
+                            <!-- Profession -->
+                            <select name="Profession" id="Profession" required="required">
+                                <option value="0">Choose</option>
+                                <option value="33">Mechanical Engineer</option>
+                                <option value="43">Software Developer</option>
+                                <option value="47">Technical Writer</option>
+                                <option value="11">Civil Servant</option>
+                                <option value="31">Librarian</option>
+                                <option value="20">Economist</option>
+                                <option value="25">Flight Attendant</option>
+                                <option value="2">Architect</option>
+                                <option value="18">Designer</option>
+                                <option value="37">Physician</option>
+                                <option value="23">Financial Analyst</option>
+                                <option value="0">Air Traffic Controller</option>
+                                <option value="39">Politician</option>
+                                <option value="38">Police Officer</option>
+                                <option value="4">Artist</option>
+                                <option value="46">Surveyor</option>
+                                <option value="17">Design Engineer</option>
+                                <option value="9">Chemical Engineer</option>
+                                <option value="28">Hotel Manager</option>
+                                <option value="16">Dentist</option>
+                                <option value="12">Comedian</option>
+                                <option value="6">Biomedical Engineer</option>
+                                <option value="27">Graphic Designer</option>
+                                <option value="13">Computer Hardware Engineer</option>
+                                <option value="36">Petroleum Engineer</option>
+                                <option value="42">Secretary</option>
+                                <option value="14">Computer Operator</option>
+                                <option value="7">Chartered Accountant</option>
+                                <option value="48">Technician</option>
+                                <option value="34">Microbiologist</option>
+                                <option value="22">Fashion Designer</option>
+                                <option value="5">Aviator</option>
+                                <option value="40">Psychologist</option>
+                                <option value="32">Magistrate</option>
+                                <option value="30">Lawyer</option>
+                                <option value="24">Firefighter</option>
+                                <option value="21">Engineer</option>
+                                <option value="35">Official</option>
+                                <option value="1">Analyst</option>
+                                <option value="26">Geologist</option>
+                                <option value="19">Drafter</option>
+                                <option value="44">Statistician</option>
+                                <option value="50">Web Designer</option>
+                                <option value="15">Consultant</option>
+                                <option value="8">Chef</option>
+                                <option value="3">Army officer</option>
+                                <option value="45">Surgeon</option>
+                                <option value="41">Scientist</option>
+                                <option value="10">Civil Engineer</option>
+                                <option value="29">Industrial Engineer</option>
+                                <option value="49">Technology Specialist</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">State</h5>
+                            <!-- State -->
+                            <select name="State" id="State" required="required">
+                                <option value="0">Choose</option>
+                                <option value="13">Madhya Pradesh</option>
+                                <option value="14">Maharashtra</option>
+                                <option value="12">Kerala</option>
+                                <option value="17">Odisha</option>
+                                <option value="22">Tamil Nadu</option>
+                                <option value="6">Gujarat</option>
+                                <option value="20">Rajasthan</option>
+                                <option value="23">Telangana</option>
+                                <option value="2">Bihar</option>
+                                <option value="0">Andhra Pradesh</option>
+                                <option value="27">West Bengal</option>
+                                <option value="7">Haryana</option>
+                                <option value="18">Puducherry</option>
+                                <option value="11">Karnataka</option>
+                                <option value="25">Uttar Pradesh</option>
+                                <option value="8">Himachal Pradesh</option>
+                                <option value="19">Punjab</option>
+                                <option value="24">Tripura</option>
+                                <option value="26">Uttarakhand</option>
+                                <option value="10">Jharkhand</option>
+                                <option value="16">Mizoram</option>
+                                <option value="1">Assam</option>
+                                <option value="9">Jammu and Kashmir</option>
+                                <option value="5">Delhi</option>
+                                <option value="4">Chhattisgarh</option>
+                                <option value="3">Chandigarh</option>
+                                <option value="15">Manipur</option>
+                                <option value="21">Sikkim</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Current Job Years</h5>
+                            <!-- Current Job Years -->
+                            <input type="text" name="Current_Job_Years" id="Current_Job_Years" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Current House Years</h5>
+                            <!-- Current_House_Years -->
+                            <input type="text" name="Current_House_Years" id="Current_House_Years" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
